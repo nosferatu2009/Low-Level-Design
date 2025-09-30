@@ -10,7 +10,7 @@ class FixedWindowRateLimiter(RateLimitingStrategy) :
     def __init__(self, window_size, max_requests):
         super().__init__(window_size, max_requests)
         self.counters = defaultdict(lambda:1)
-        self.lock = Lock
+        self.lock = Lock()
     
     def is_request_allowed(self, timestamp, user):
 
